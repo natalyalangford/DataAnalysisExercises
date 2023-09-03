@@ -18,6 +18,10 @@ import numpy as np
 
 # list: [0,1,2,3,4,5,6,7,8]
 def calculate(list):
+  if len(list) < 9:
+    raise ValueError("List must contain nine numbers.")
+
+  
   # use numpy to store list
   matrix = np.array(list)
 
@@ -35,17 +39,12 @@ def calculate(list):
     'sum': [None, None, None]
   }
   
-  # store by indexing 
-  calculations['mean'][0] = np.mean(matrix, axis=0)  # store mean for axis1
-  calculations['mean'][1] = np.mean(matrix, axis=1)  
-  calculations['mean'][2] = np.mean(matrix)
-  
-  # or store directly 
-  calculations['variance'] = [np.var(matrix, axis=0), np.var(matrix, axis=1), np.var(matrix)]
-  calculations['standard deviation'] = [np.std(matrix, axis=0), np.std(matrix, axis=1), np.std(matrix)]
-  calculations['max'] = [np.max(matrix, axis=0), np.max(matrix, axis=1), np.max(matrix)]
-  calculations['min'] = [np.min(matrix, axis=0), np.min(matrix, axis=1), np.min(matrix)]
-  calculations['sum'] = [np.sum(matrix, axis=0), np.sum(matrix, axis=1), np.sum(matrix)]
+  calculations['mean'] = [matrix.mean(axis=0).tolist(), matrix.mean(axis=1).tolist(), matrix.mean().tolist()] # store mean for axis1
+  calculations['variance'] = [matrix.var(axis=0).tolist(), matrix.var(axis=1).tolist(), matrix.mean().tolist()]
+  calculations['standard deviation'] = [matrix.std(axis=0).tolist(), matrix.std(axis=1).tolist(), matrix.mean().tolist()]
+  calculations['max'] = [matrix.max(axis=0).tolist(), matrix.max(axis=0).tolist(), matrix.max().tolist()]
+  calculations['min'] = [matrix.min(axis=0).tolist(), matrix.min(axis=1).tolist(), matrix.min().tolist()]
+  calculations['sum'] = [matrix.sum(axis=0).tolist(), matrix.sum(axis=1).tolist(), matrix.sum().tolist()]
 
 
   calculations
