@@ -40,9 +40,9 @@ def calculate(list):
   }
   
   calculations['mean'] = [matrix.mean(axis=0).tolist(), matrix.mean(axis=1).tolist(), matrix.mean().tolist()] # store mean for axis1
-  calculations['variance'] = [matrix.var(axis=0).tolist(), matrix.var(axis=1).tolist(), matrix.mean().tolist()]
-  calculations['standard deviation'] = [matrix.std(axis=0).tolist(), matrix.std(axis=1).tolist(), matrix.mean().tolist()]
-  calculations['max'] = [matrix.max(axis=0).tolist(), matrix.max(axis=0).tolist(), matrix.max().tolist()]
+  calculations['variance'] = [matrix.var(axis=0).tolist(), matrix.var(axis=1).tolist(), matrix.var().tolist()]
+  calculations['standard deviation'] = [matrix.std(axis=0).tolist(), matrix.std(axis=1).tolist(), matrix.std().tolist()]
+  calculations['max'] = [matrix.max(axis=0).tolist(), matrix.max(axis=1).tolist(), matrix.max().tolist()]
   calculations['min'] = [matrix.min(axis=0).tolist(), matrix.min(axis=1).tolist(), matrix.min().tolist()]
   calculations['sum'] = [matrix.sum(axis=0).tolist(), matrix.sum(axis=1).tolist(), matrix.sum().tolist()]
 
