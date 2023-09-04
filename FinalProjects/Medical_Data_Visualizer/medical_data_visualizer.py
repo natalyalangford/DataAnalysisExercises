@@ -44,7 +44,7 @@ def draw_heat_map():
                  (df['height'] >= df['height'].quantile(0.025)) &
                  (df['height'] <= df['height'].quantile(0.975)) &
                  (df['weight'] >= df['weight'].quantile(0.025)) &
-                 (df['weight'] <= df['weight'].quantile(0.975))
+                 (df['weight'] <= df['weight'].quantile(0.975))      # 97.5th percentile
                  ]
 
     # Calculate the correlation matrix
